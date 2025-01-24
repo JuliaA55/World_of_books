@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Світ Книг{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style=" display:flex; flex-direction:column; min-height: 100vh; margin:0;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Світ Книг</a>
+            <button style="margin-left: 200px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5"/>
+                </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'book_list' %}">Каталог книг</a>
+            </button>
+            <button style="margin-left: 20px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16" style="margin-top: -5px;">
+                    <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zM1 4v2h6V4zm8 0v2h6V4zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'gift_list' %}">Подарунки</a>
+            </button>
+            <button style="margin-left: 20px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-box2-heart" viewBox="0 0 16 16" style="margin-top: -5px;">
+                    <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982"/>
+                    <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z"/>
+                </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'game_list' %}">Настільні ігри</a>
+            </button>
+            <button style="margin-left: 20px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16" style="margin-top: -5px;">
+                    <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
+                    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                  </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'notebook_list' %}">Блокноти</a>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+            <button style="margin-left: 200px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16" style="margin-top: -5px;">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'cart_view' %}">Кошик</a>
+            </button>
+            {% if user.is_authenticated %}
+            <div>
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    
+                    <button type="submit" style="margin-left: 20px; border-radius: 8px; background-color:whitesmoke ;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+                            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
+                            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
+                        </svg>
+                        <a style="color: black; font-weight: bolder; font-size: larg;">{{user.username}}</a>
+                    </button>
+                </form>
+            </div>
+             {% else %}
+            <button style="margin-left: 20px; border-radius: 8px; background-color:whitesmoke ;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16" style="margin-top: -5px;">
+                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/>
+                  </svg>
+                <a style="color: black; font-weight: bolder; font-size: larg; text-decoration: none;" href="{% url 'login' %}">Увійти</a>
+            </button>
+            {% endif %}
+
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <footer class="bg-dark" style="color: white; text-align: center; position: fixed; right: 0; bottom: 0; width: 100%;">
+        <span>&copy; 2024 Education App for PV321 Group</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

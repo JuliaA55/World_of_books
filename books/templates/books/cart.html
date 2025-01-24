@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Ваш кошик</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Кількість</th>
+            <th>Ціна</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.item.title }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.item.price|default:0 }}</td>
+            <td>
+                <a href="{% url 'remove_from_cart' item.model_type item.item.id %}" class="btn btn-danger" style="background-color: #BAFF39; color: black; border: 1px solid #BAFF39; ">Видалити</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3>Загальна сума: {{ total_price }} гривень</h3>
+<button style="width: 250px; border: none; background-color: #BAFF39; border-radius: 8px; height: 40px; margin-left: 500px;">
+    <a style="color: black; text-decoration: none; font-weight: bolder;" href="{% url 'create_order' %}">Оформити замовлення</a>
+</button>
+
+{% endblock %}

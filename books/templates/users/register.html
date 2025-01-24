@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container"  style="background-color:#f8f9fa;">
+    <h2>Реєстрація</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% for field in form %}
+        {% if field.errors %}
+            <div class="alert alert-danger">
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+        <button type="submit" style="width: 250px; border: none; background-color: #BAFF39; border-radius: 8px; height: 40px; font-weight: bolder;">Зареєструватися</button>
+    </form>
+</div>
+{% endblock %}
