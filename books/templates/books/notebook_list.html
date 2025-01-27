@@ -10,18 +10,17 @@
     {% extends 'base.html' %}
     {% block content %}
 
-    <div class="container mt-4">
+    <div class="containerDiv">
 
         <!-- Список книг -->
-        <div style="background-color: rgb(241, 239, 239); border-radius: 10px; width: 1550px; margin-left: -150px;">
-           <div style="width: 1500px; margin-left: 30px; height: auto;">
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; background-color: rgb(241, 239, 239);">
+        <div class="cardsDiv" style="margin-right: 7%; margin-bottom: 3%;">
+            <div class="cardDivList" style="margin-top: 30%;">
                {% for notebook in notebooks %}
-               <div class="card" style="width: 18rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-bottom: 10px;" >
+               <div class="card cardDivList1">
                    {% if notebook.photo %}
-                       <img src="{{notebook.photo.url}}" class="card-img-top" alt="..." width="14rem" height="300rem" style="border-radius: 7px;">
+                       <img src="{{notebook.photo.url}}" class="card-img-top cardImg" alt="...">
                    {% else %}
-                       <img src="https://m.media-amazon.com/images/I/719uMEB4kiL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="..." width="100px" height="100px">
+                       <img src="https://m.media-amazon.com/images/I/719uMEB4kiL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="...">
                    {% endif %}
                    <div class="card-body">
                     <h5 class="card-text">
@@ -37,7 +36,6 @@
                        <h3>Блокноти відсутні</h3>       
                {% endfor %}
             </div>
-           </div>
            </div>
         </div>
     </div>

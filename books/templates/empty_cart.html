@@ -9,7 +9,10 @@
     {% extends 'base.html' %}
     {% block content %}
     <h1>Ваш кошик порожній</h1>
-    <a href="{% url 'book_list' %}">Переглянути товари</a>
+    <button class="btnStyle">
+        <a href="{% url 'book_list' %}">Переглянути товари</a>
+    </button>
+    
     {% endblock %}
 </body>
 </html>

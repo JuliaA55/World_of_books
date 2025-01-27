@@ -6,11 +6,11 @@
         {% csrf_token %}
         {{ form.as_p }}
         <input type="hidden" name="next" value="{{ request.GET.next|default:'/' }}">
-        <button type="submit"  style="width: 250px; border: none; background-color: #BAFF39; border-radius: 8px; height: 40px; font-weight: bolder;">Увійти</button>
+        <button type="submit" class="btnStyle">Увійти</button>
     </form>
     <h6 style="margin-left: 450px;">Ще немає акаунта? Реєструйтесь нижче</h6>
-    <button style="width: 250px; border: none; background-color: #BAFF39; border-radius: 8px; height: 40px; margin-left: 450px;">
-        <a style="color: black; text-decoration: none; font-weight: bolder;" href="{% url 'register' %}">Зареєструватися</a>
+    <button class="btnStyle">
+        <a style="color: black; text-decoration: none;" href="{% url 'register' %}">Зареєструватися</a>
     </button>
 </div>
 {% endblock %}
